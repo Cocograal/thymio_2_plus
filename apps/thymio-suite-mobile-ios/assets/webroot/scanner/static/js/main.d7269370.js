@@ -31470,52 +31470,41 @@
                                       opacity: 'busy' === A.status ? 0.3 : 1,
                                     },
                                     onClick: function () {
-                                      var e,
-                                        t = (function (A, e, t, n, i) {
-                                          var r,
-                                          o = {
-                                            vpl3: function (A, e) {
-                                              return 'http://localhost:3000/vpl3/index.html?robot=thymio-tdm&role=teacher&uilanguage='
-                                                .concat(i, '#uuid=%7B')
-                                                .concat(A, '%7D&w=ws://')
-                                                .concat(
-                                                  e,
-                                                  ':8597&pass=8D0SYB&name=',
-                                                )
-                                                .concat(n);
-                                            },
-                                            scratch: function (A, e) {
-                                              return 'http://localhost:3000/scratch/index.html?device=%7B'
-                                                .concat(A, '%7D&ws=ws://')
-                                                .concat(
-                                                  e,
-                                                  ':8597&pass=8D0SYB&name=',
-                                                )
-                                                .concat(n);
-                                            },
-                                            };
-                                          return null !== (r = o[t](A, e)) &&
-                                            void 0 !== r
-                                            ? r
-                                            : o.vpl3(A, e);
-                                        })(
-                                          A.nodeId,
-                                          A.ip,
-                                          o.gl.interface,
-                                          A.name,
-                                          o.lang,
-                                        );
-                                      (e = JSON.stringify({
-                                        spec: 'openUrl',
-                                        url: t,
-                                      })),
-                                        window.ReactNativeWebView
-                                          ? window.ReactNativeWebView.postMessage(
-                                              e,
-                                            )
-                                          : console.error(
-                                              'window.ReactNativeWebView no est\xe1 definido.',
-                                            );
+                                      var e = (function (A, e, t, n, i) {
+                                     	var r,
+                                       	o = {
+                                         	vpl3: function (A, e) {
+                                           	return 'http://localhost:3000/vpl3/index.html?robot=thymio-tdm&role=teacher&uilanguage='
+                                             	.concat(i, '#uuid=%7B')
+                                             	.concat(A, '%7D&w=ws://')
+                                             	.concat(
+                                               	e,
+                                               	':8597&pass=8D0SYB&name=',
+                                             	)
+                                             	.concat(n);
+                                         	},
+                                         	scratch: function (A, e) {
+                                           	return 'http://localhost:3000/scratch/index.html?device=%7B'
+                                             	.concat(A, '%7D&ws=ws://')
+                                             	.concat(
+                                               	e,
+                                               	':8597&pass=8D0SYB&name=',
+                                             	)
+                                             	.concat(n);
+                                         	},
+                                       	};
+                                     	return null !== (r = o[t](A, e)) &&
+                                       	void 0 !== r
+                                       	? r
+                                       	: o.vpl3(A, e);
+                                   	})(
+                                     	A.nodeId,
+                                     	A.ip,
+                                     	o.gl.interface,
+                                     	A.name,
+                                     	o.lang,
+                                   	);
+                                   	window.open(e);
                                     },
                                     children: [
                                       (0, we.jsx)(We, {

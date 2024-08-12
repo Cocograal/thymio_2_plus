@@ -1,4 +1,4 @@
-/*! For license information please see main.5329f81c.js.LICENSE.txt */
+/*! For license information please see main.d7269370.js.LICENSE.txt */
 !(function () {
   var A = {
       998: function (A, e, t) {
@@ -30806,7 +30806,7 @@
       var wo = ce.div(
           Eo ||
             (Eo = I([
-              '\n  cursor: pointer;\n  width: calc(100% - 5rem);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 12px 24px;\n  margin: 0px;\n  background-color: #1976D2;\n  color: white;\n  border-radius: 4px;\n  box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);\n  transition: background-color 250ms linear, box-shadow 250ms linear;\n\n  &:hover {\n    background-color: #115293;\n  }\n\n  &:active {\n    box-shadow: none;\n  }\n',
+              '\n  cursor: pointer;\n  width: 100%;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 12px 24px;\n  margin: 0px;\n  background-color: #1976D2;\n  color: white;\n  border-radius: 4px;\n  box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);\n  transition: background-color 250ms linear, box-shadow 250ms linear;\n\n  &:hover {\n    background-color: #115293;\n  }\n\n  &:active {\n    box-shadow: none;\n  }\n',
             ])),
         ),
         bo = (function (A) {
@@ -30878,6 +30878,7 @@
                   (0, A.useState)({
                     data: '',
                     lang: 'en',
+                    isTablet: '',
                     status: '',
                     gl: {interface: 'vpl3'},
                   }),
@@ -30888,7 +30889,13 @@
               return (
                 (0, A.useEffect)(function () {
                   var A = new URLSearchParams(window.location.search),
-                    e = {data: '', lang: 'en', status: '', gl: ''};
+                    e = {
+                      data: '',
+                      lang: 'en',
+                      status: '',
+                      gl: '',
+                      isTablet: '',
+                    };
                   A.forEach(function (A, t) {
                     e[t] = A;
                   }),
@@ -30896,6 +30903,7 @@
                       data: '' !== e.data ? JSON.parse(e.data) : {},
                       lang: e.lang,
                       status: e.status,
+                      isTablet: e.isTablet,
                       gl: '' !== e.gl ? JSON.parse(e.gl) : {},
                     });
                 }, []),
@@ -30915,7 +30923,7 @@
             p = (function (A, e) {
               var t = {
                   common: {
-                    reload_scan: 'Relancer la recherche des robots Thymio.',
+                    reload_scan: 'Relancer la recherche des robots Thymio!',
                     help: "Cliquez sur le bouton aide (?) pour trouver des conseils et plus d'information.",
                     visit:
                       "Pour trouver du mat\xe9riel \xe9ducatif et des id\xe9es d'activit\xe9s \xe0 r\xe9aliser en classe avec Thymio, visitez le site web https://www.thymio.org.",
@@ -31284,7 +31292,7 @@
                 backgroundColor: '#271845',
                 color: '#fff',
                 width: 'auto',
-                height: 'calc(100vh - 5rem)',
+                height: 'calc(100vh - 4rem)',
                 display: 'flex',
                 overflowX: 'hidden',
                 overflowY: 'scroll',
@@ -31292,10 +31300,13 @@
               children: [
                 (0, we.jsxs)('div', {
                   style: {
-                    flex: 1,
+                    width: 'false' === o.isTablet ? 'calc(55% - 2rem)' : '50%',
                     height: '100%',
                     display: 'flex',
                     flexDirection: 'column',
+                    alignItems: 'center',
+                    overflowX: 'hidden',
+                    marginRight: '2rem',
                   },
                   children: [
                     (0, we.jsx)('img', {
@@ -31395,13 +31406,13 @@
                 }),
                 (0, we.jsx)('div', {
                   style: {
-                    flex: 1,
-                    maxWidth: '60%',
+                    width: 'false' === o.isTablet ? 'calc(45% - 3rem)' : '50%',
                     height: '100%',
                     padding: '0px',
                     margin: '0px',
-                    alignItems: 'flex-start',
+                    alignItems: 'center',
                     justifyContent: 'flex-start',
+                    overflowX: 'hidden',
                   },
                   children: (0, we.jsx)('div', {
                     style: {
@@ -31411,7 +31422,6 @@
                       flexWrap: 'wrap',
                       rowGap: '10px',
                       flexDirection: 'row',
-                      padding: '0 3rem',
                     },
                     children: l
                       ? (0, we.jsx)(we.Fragment, {
@@ -31456,12 +31466,13 @@
                                       fontSize: '1.2em',
                                       maxWidth: '160px',
                                       maxHeight: '160px',
-                                      flexBasis: '80px',
+                                      flexBasis: '90px',
                                       opacity: 'busy' === A.status ? 0.3 : 1,
                                     },
                                     onClick: function () {
-                                      var e = (function (A, e, t, n, i) {
-                                        var r,
+                                      var e,
+                                        t = (function (A, e, t, n, i) {
+                                          var r,
                                           o = {
                                             vpl3: function (A, e) {
                                               return 'http://localhost:3000/vpl3/index.html?robot=thymio-tdm&role=teacher&uilanguage='
@@ -31482,19 +31493,29 @@
                                                 )
                                                 .concat(n);
                                             },
-                                          };
-                                        return null !== (r = o[t](A, e)) &&
-                                          void 0 !== r
-                                          ? r
-                                          : o.vpl3(A, e);
-                                      })(
-                                        A.nodeId,
-                                        A.ip,
-                                        o.gl.interface,
-                                        A.name,
-                                        o.lang,
-                                      );
-                                      window.open(e);
+                                            };
+                                          return null !== (r = o[t](A, e)) &&
+                                            void 0 !== r
+                                            ? r
+                                            : o.vpl3(A, e);
+                                        })(
+                                          A.nodeId,
+                                          A.ip,
+                                          o.gl.interface,
+                                          A.name,
+                                          o.lang,
+                                        );
+                                      (e = JSON.stringify({
+                                        spec: 'openUrl',
+                                        url: t,
+                                      })),
+                                        window.ReactNativeWebView
+                                          ? window.ReactNativeWebView.postMessage(
+                                              e,
+                                            )
+                                          : console.error(
+                                              'window.ReactNativeWebView no est\xe1 definido.',
+                                            );
                                     },
                                     children: [
                                       (0, we.jsx)(We, {
@@ -31554,4 +31575,4 @@
         Do();
     })();
 })();
-//# sourceMappingURL=main.5329f81c.js.map
+//# sourceMappingURL=main.d7269370.js.map

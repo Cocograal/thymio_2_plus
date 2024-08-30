@@ -31229,7 +31229,11 @@
               var e = Object.values(A).map(function (A) {
                 var e = A.txt,
                   t = A.addresses,
-                  n = (A.host, t);
+                  n = t.find(function (A) {
+                    return !!/^(?:(?:^|\.)(?:2(?:5[0-5]|[0-4]\d)|1?\d?\d)){4}$/.test(
+                      A,
+                    );
+                  });
                 return {
                   host: 'ws://'.concat(n, ':').concat(e['ws-port']),
                   hostName: e.name,

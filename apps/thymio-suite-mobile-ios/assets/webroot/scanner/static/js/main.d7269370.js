@@ -31516,7 +31516,7 @@
                                           var r,
                                             o = {
                                               vpl3: function (A, e) {
-                                                return '/vpl3/index.html?robot=thymio-tdm&role=teacher&uilanguage='
+                                                return 'http://localhost:3000/vpl3/index.html?robot=thymio-tdm&role=teacher&uilanguage='
                                                   .concat(i, '#uuid=%7B')
                                                   .concat(A, '%7D&w=ws://')
                                                   .concat(
@@ -31526,7 +31526,7 @@
                                                   .concat(n);
                                               },
                                               scratch: function (A, e) {
-                                                return '/scratch/index.html?device=%7B'
+                                                return 'http://localhost:3000/scratch/index.html?device=%7B'
                                                   .concat(A, '%7D&ws=ws://')
                                                   .concat(
                                                     e,

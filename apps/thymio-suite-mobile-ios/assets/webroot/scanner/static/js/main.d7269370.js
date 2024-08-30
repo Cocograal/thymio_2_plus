@@ -1,4 +1,4 @@
-/*! For license information please see main.336cc8f3.js.LICENSE.txt */
+/*! For license information please see main.e107b8c5.js.LICENSE.txt */
 !(function () {
   var A = {
       998: function (A, e, t) {
@@ -31229,11 +31229,13 @@
               var e = Object.values(A).map(function (A) {
                 var e = A.txt,
                   t = A.addresses,
-                  n = t.find(function (A) {
-                    return !!/^(?:(?:^|\.)(?:2(?:5[0-5]|[0-4]\d)|1?\d?\d)){4}$/.test(
-                      A,
-                    );
-                  });
+                  n =
+                    (A.host,
+                    t.find(function (A) {
+                      return !!/^(?:(?:^|\.)(?:2(?:5[0-5]|[0-4]\d)|1?\d?\d)){4}$/.test(
+                        A,
+                      );
+                    }));
                 return {
                   host: 'ws://'.concat(n, ':').concat(e['ws-port']),
                   hostName: e.name,
@@ -31599,4 +31601,4 @@
         No();
     })();
 })();
-//# sourceMappingURL=main.336cc8f3.js.map
+//# sourceMappingURL=main.e107b8c5.js.map

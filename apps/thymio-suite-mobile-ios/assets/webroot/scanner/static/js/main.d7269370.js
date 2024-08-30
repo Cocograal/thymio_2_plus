@@ -1,4 +1,4 @@
-/*! For license information please see main.d7269370.js.LICENSE.txt */
+/*! For license information please see main.336cc8f3.js.LICENSE.txt */
 !(function () {
   var A = {
       998: function (A, e, t) {
@@ -31229,11 +31229,7 @@
               var e = Object.values(A).map(function (A) {
                 var e = A.txt,
                   t = A.addresses,
-                  n = t.find(function (A) {
-                    return !!/^(?:(?:^|\.)(?:2(?:5[0-5]|[0-4]\d)|1?\d?\d)){4}$/.test(
-                      A,
-                    );
-                  });
+                  n = (A.host, t);
                 return {
                   host: 'ws://'.concat(n, ':').concat(e['ws-port']),
                   hostName: e.name,
@@ -31268,44 +31264,7 @@
               return function () {
                 return A.apply(this, arguments);
               };
-            })(),
-            M = function (A) {
-                var e = (function (A, e, t, n, i) {
-                    var r,
-                      o = {
-                        vpl3: function (A, e) {
-                          return 'http://localhost:3000/vpl3/index.html?robot=thymio-tdm&role=teacher&uilanguage='
-                            .concat(i, '#uuid=%7B')
-                            .concat(A, '%7D&w=ws://')
-                            .concat(
-                              e,
-                              ':8597&pass=8D0SYB&name=',
-                            )
-                            .concat(n);
-                        },
-                        scratch: function (A, e) {
-                          return 'http://localhost:3000/scratch/index.html?device=%7B'
-                            .concat(A, '%7D&ws=ws://')
-                            .concat(
-                              e,
-                              ':8597&pass=8D0SYB&name=',
-                            )
-                            .concat(n);
-                        },
-                      };
-                    return null !== (r = o[t](A, e)) &&
-                      void 0 !== r
-                      ? r
-                      : o.vpl3(A, e);
-                  })(
-                    A.nodeId,
-                    A.ip,
-                    o.gl.interface,
-                    A.name,
-                    o.lang,
-                  );
-                  window.open(e);
-            };
+            })();
           return (
             (0, A.useEffect)(
               function () {
@@ -31548,7 +31507,43 @@
                                   {
                                     style: Fo(A),
                                     onClick: function () {
-                                      return M(A);
+                                      return (function (A) {
+                                        var e = (function (A, e, t, n, i) {
+                                          var r,
+                                            o = {
+                                              vpl3: function (A, e) {
+                                                return '/vpl3/index.html?robot=thymio-tdm&role=teacher&uilanguage='
+                                                  .concat(i, '#uuid=%7B')
+                                                  .concat(A, '%7D&w=ws://')
+                                                  .concat(
+                                                    e,
+                                                    ':8597&pass=8D0SYB&name=',
+                                                  )
+                                                  .concat(n);
+                                              },
+                                              scratch: function (A, e) {
+                                                return '/scratch/index.html?device=%7B'
+                                                  .concat(A, '%7D&ws=ws://')
+                                                  .concat(
+                                                    e,
+                                                    ':8597&pass=8D0SYB&name=',
+                                                  )
+                                                  .concat(n);
+                                              },
+                                            };
+                                          return null !== (r = o[t](A, e)) &&
+                                            void 0 !== r
+                                            ? r
+                                            : o.vpl3(A, e);
+                                        })(
+                                          A.nodeId,
+                                          A.ip,
+                                          a.gl.interface,
+                                          A.name,
+                                          a.lang,
+                                        );
+                                        window.open(e);
+                                      })(A);
                                     },
                                     children: [
                                       (0, we.jsx)(We, {
@@ -31600,4 +31595,4 @@
         No();
     })();
 })();
-//# sourceMappingURL=main.d7269370.js.map
+//# sourceMappingURL=main.336cc8f3.js.map
